@@ -1,8 +1,24 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo : https://edurekaassingment.netlify.app/
 
-Currently, two official plugins are available:
+Click on a column header to sort the data in ascending order. Click again to toggle between ascending and descending order.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+
+
+
+## 📷 Screenshots
+
+###  Desktop View
+![Table View](https://github.com/gaurav-raval/Edureka/blob/main/src/assets/Table(Desktop%20view).png)
+![Form View](https://github.com/gaurav-raval/Edureka/blob/main/src/assets/Form(Desktop%20view).png)
+
+
+###  Mobile View
+![Table View](https://github.com/gaurav-raval/Edureka/blob/main/src/assets/Table(Mobile%20view).png)
+![Form View](https://github.com/gaurav-raval/Edureka/blob/main/src/assets/Form(Mobile%20View).png)
+
