@@ -93,44 +93,45 @@ const paginatedData = useMemo(() => {
       </button>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-300">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              {columns.map((col) => (
-                <th key={col.key} className="p-2 border cursor-pointer" onClick={() => requestSort(col.key)}>
-                  {col.label}
-                  {sortConfig.key === col.key ? (
-                    sortConfig.direction === "asc" ? <FaSortUp className="inline ml-2" /> : <FaSortDown className="inline ml-2" />
-                  ) : (
-                    <FaSort className="inline ml-2" />
-                  )}
-                </th>
-              ))}
-              <th className="p-2 border">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedData.length > 0 ? (
-              paginatedData.map((row, index) => (
-                <tr key={index} className="border-b hover:bg-gray-50">
-                  <td className="p-2 border">{row.name}</td>
-                  <td className="p-2 border">{row.email}</td>
-                  <td className="p-2 border">{row.id}</td>
-                  <td className="p-2 border">{row.website}</td>
-                  <td className="p-2 border">{row.industry}</td>
-                  <td className="p-2 border">{row.status}</td>
-                  <td className="p-2 border">{row.remark}</td>
-                  <td className="p-2 border"><button>...</button></td>
-                </tr>
-              ))
+  <table className="min-w-full bg-white border border-gray-300">
+    <thead>
+      <tr className="bg-gray-100 text-left">
+        {columns.map((col) => (
+          <th key={col.key} className="p-2 border cursor-pointer" onClick={() => requestSort(col.key)}>
+            {col.label}
+            {sortConfig.key === col.key ? (
+              sortConfig.direction === "asc" ? <FaSortUp className="inline ml-2" /> : <FaSortDown className="inline ml-2" />
             ) : (
-              <tr>
-                <td colSpan={8} className="p-4 text-center">No data available</td>
-              </tr>
+              <FaSort className="inline ml-2" />
             )}
-          </tbody>
-        </table>
-      </div>
+          </th>
+        ))}
+        <th className="p-2 border">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {paginatedData.length > 0 ? (
+        paginatedData.map((row, index) => (
+          <tr key={index} className="border-b hover:bg-gray-50 text-sm md:text-base">
+            <td className="p-2 border">{row.name}</td>
+            <td className="p-2 border">{row.email}</td>
+            <td className="p-2 border">{row.id}</td>
+            <td className="p-2 border">{row.website}</td>
+            <td className="p-2 border">{row.industry}</td>
+            <td className="p-2 border">{row.status}</td>
+            <td className="p-2 border">{row.remark}</td>
+            <td className="p-2 border"><button>...</button></td>
+          </tr>
+        ))
+      ) : (
+        <tr>
+          <td colSpan={8} className="p-4 text-center">No data available</td>
+        </tr>
+      )}
+    </tbody>
+  </table>
+</div>
+
 
       {/* Pagination Controls */}
       <div className="flex justify-between items-center mt-4">
