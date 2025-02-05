@@ -4,6 +4,6 @@ Live Demo : https://edurekaassingment.netlify.app/
 
 ## 📷 Screenshots
 
-### 🖥️ Desktop View
-![Form View](Form(Desktop view).png)
+###  Desktop View
+![Form View](src\assets\Form(Desktop view).png)
 
