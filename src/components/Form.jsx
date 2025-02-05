@@ -7,7 +7,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const tableData = useSelector((state) => state.table.data) || [];
 
-  // Initialize react-hook-form
+  // Initialing  react-hook-form
   const {
     register,
     handleSubmit,
@@ -15,7 +15,7 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
-  // Handle Form Submission
+  // Handling form submission
   const onSubmit = (data) => {
     // Add new entry to existing table data
     const newData = [...tableData, { id: tableData.length + 1, ...data }];

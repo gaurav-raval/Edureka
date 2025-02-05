@@ -16,7 +16,7 @@ const Table = () => {
   // State for filtering
   const [search, setSearch] = useState("");
 
-  // Column Definitions (Ensure key names match data object keys)
+  // Column Definitions for Table
   const columns = [
     { label: "Account Name", key: "name" },
     { label: "Email", key: "email" },
@@ -36,7 +36,7 @@ const Table = () => {
     setSortConfig({ key, direction });
   };
 
-  // Sorting Logic
+  // Sorting Logic for Table
   const sortedData = useMemo(() => {
     if (!sortConfig.key) return data;
     return [...data].sort((a, b) => {
@@ -46,14 +46,14 @@ const Table = () => {
     });
   }, [data, sortConfig]);
 
-  // Filtering Logic
+  // Filtering Logic for Search
   const filteredData = useMemo(() => {
     return data.filter((row) =>
       Object.values(row).some((val) => String(val).toLowerCase().includes(search.toLowerCase()))
     );
   }, [data, search]);
 
-  // Pagination Logic
+  // Pagination Logic and Data Slicing
   const totalPages = Math.ceil(filteredData.length / rowsPerPage);
 const paginatedData = useMemo(() => {
   return filteredData.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
@@ -63,7 +63,7 @@ const paginatedData = useMemo(() => {
   const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
-  // Export Data to Excel
+  // Export Data to Excel Function
   const exportToExcel = () => {
     const ws = XLSX.utils.json_to_sheet(filteredData); // Convert filtered data to sheet
     const wb = XLSX.utils.book_new(); // Create a new workbook
@@ -84,7 +84,7 @@ const paginatedData = useMemo(() => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* Export Button */}
+      {/* Export Button  */}
       <button
         onClick={exportToExcel}
         className="mb-4 px-4 py-2 bg-green-500 text-white rounded"
