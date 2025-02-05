@@ -2,6 +2,15 @@
 
 Live Demo : https://edurekaassingment.netlify.app/
 
+Click on a column header to sort the data in ascending order. Click again to toggle between ascending and descending order.
+
+
+
+
+
+
+
+
 ## 📷 Screenshots
 
 ###  Desktop View
